@@ -1,0 +1,15 @@
+{
+  "name": "amber-blog",
+  "version": "1.0.0",
+  "description": "Amber代码屋",
+  "main": "index.js",
+  "scripts": {
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "AmberAAA",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "1.8.2"
+  }
+}
