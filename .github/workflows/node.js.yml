@@ -21,9 +21,7 @@ jobs:
         node-version: 14.x
     - run: npm i
     - run: npm run build
-    - name: push code to server
-      with:
-        PRIVATE_KEY: ${{ toJson(secrets) }}
+    - name: 'push code'
       env:
         PRIVATE_KEY: ${{ toJson(secrets) }}
       run: |
