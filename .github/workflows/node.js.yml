@@ -22,10 +22,11 @@ jobs:
     - run: npm i
     - run: npm run build
     - name: push code to server
+      with:
+        PRIVATE_KEY: ${{ toJson(secrets) }}
       env:
-        PRIVATE_KEY: ${{ secrets.env.PRIVATE_KEY }}
+        PRIVATE_KEY: ${{ toJson(secrets) }}
       run: |
-        echo "$PRIVATE_KEY"
         mkdir -p ~/.ssh/
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
         env | grep PRIVATE_KEY
