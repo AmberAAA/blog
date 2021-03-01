@@ -19,11 +19,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
+      env:
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
     - run: npm i
     - run: npm run build
     - name: 'push code'
       env:
-        PRIVATE_KEY: ${{ secrets.env }}
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh/
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
