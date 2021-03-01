@@ -23,7 +23,7 @@ jobs:
     - run: npm run build
     - name: 'push code'
       env:
-        PRIVATE_KEY: ${{ toJson(secrets) }}
+        PRIVATE_KEY: ${{ secrets.env }}
       run: |
         mkdir -p ~/.ssh/
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
