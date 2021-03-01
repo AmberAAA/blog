@@ -30,4 +30,4 @@ jobs:
         env | grep PRIVATE_KEY
         chmod 600  ~/.ssh/id_rsa
         ssh-keyscan anborong.top >> ~/.ssh/known_hosts
-        scp -r ./docs/.vuepress/dist root@anborong.top:~/blog
+        scp -r ./docs/.vuepress/dist/ root@anborong.top:~/blog/
