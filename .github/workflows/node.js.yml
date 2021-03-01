@@ -23,7 +23,7 @@ jobs:
     - run: npm run build
     - name: push code to server
       env:
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        PRIVATE_KEY: ${{ secrets.dev.PRIVATE_KEY }}
       run: |
         echo "$PRIVATE_KEY"
         mkdir -p ~/.ssh/
