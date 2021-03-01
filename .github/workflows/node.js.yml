@@ -21,7 +21,6 @@ jobs:
         node-version: 14.x
     - run: npm i
     - run: npm run build
-    - run: npm test
     - name: push code to server
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
@@ -29,6 +28,7 @@ jobs:
         echo "$PRIVATE_KEY"
         mkdir -p ~/.ssh/
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+        env | grep PRIVATE_KEY
         chmod 600  ~/.ssh/id_rsa
         ssh-keyscan anborong.top >> ~/.ssh/known_hosts
         scp ./docs/.vueoress/dist root@anborong.top:~/blog
