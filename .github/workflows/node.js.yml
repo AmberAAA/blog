@@ -23,3 +23,12 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: npm test
+    - name: Setup Deploy Private Key
+      env:
+        PRIVATE_KEY: ${{ env.PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$PRIVATE_KEY" > ~/.ssh/id_rsa 
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan anborong.top >> ~/.ssh/known_hosts
+        scp ./docs/.vueoress/dist root@anborong.top:~/blog
