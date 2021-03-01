@@ -13,7 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 14.x
@@ -23,12 +22,13 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: npm test
-    - name: Setup Deploy Private Key
+    - name: push code to server
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       run: |
+        echo "$PRIVATE_KEY"
         mkdir -p ~/.ssh/
-        chmod 666 ~/.ssh/id_rsa
-        echo "$PRIVATE_KEY" > ~/.ssh/id_rsa 
+        echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600  ~/.ssh/id_rsa
         ssh-keyscan anborong.top >> ~/.ssh/known_hosts
         scp ./docs/.vueoress/dist root@anborong.top:~/blog
