@@ -1,20 +1,13 @@
-> 这里不只有代码，还有温度。
-<!-- # 代码 -->
-
-<!-- ## VsCode -->
-
-<!-- TODO: 格式化代码 -->
-
-<!-- # 美食 -->
-
-
-<!-- # 工作职场 -->
-<!-- TODO: 职业规划与频繁跳槽 -->
-
-
-<!-- # 生活感悟 -->
-
-
-<!-- # 年终总结 -->
-<!-- TODO: 摘抄往年年终总结 -->
-<!-- TODO: 2020年年终总结 -->
+---
+home: true
+actionText: 开始 →
+actionLink: 
+features:
+- title: Simplicity First
+  details: Minimal setup with markdown-centered project structure helps you focus on writing.
+- title: Vue-Powered
+  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
+- title: Performant
+  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+footer: MIT Licensed | Copyright © 2018-present Evan You
+---
