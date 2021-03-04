@@ -4,7 +4,7 @@
   "description": "Amber代码屋",
   "main": "index.js",
   "scripts": {
-    "start": "vuepress dev docs --open",
+    "start": "vuepress dev docs",
     "build": "vuepress build docs"
   },
   "author": "AmberAAA",
