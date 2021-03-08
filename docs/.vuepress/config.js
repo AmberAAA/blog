@@ -3,6 +3,13 @@ module.exports = {
   description: "Amber代码屋 | 分享程序员知识与生活的平台",
   head: [
     ["meta", { name: "baidu-site-verification", content: "code-BIOahWpBKG" }],
+    [
+      "script",
+      {
+        type: "text/javascript",
+        src: "https://v1.cnzz.com/z_stat.php?id=1279738583&web_id=1279738583",
+      },
+    ],
   ],
   themeConfig: {
     nav: [
