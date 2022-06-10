@@ -10,6 +10,11 @@ toc: menu
 
 ## Vscode插件
 
+1. `streetsidesoftware.code-spell-checker` 代码拼写错误检查
+2. `github.copilot` Github副驾驶，AI提示
+3. `eamodio.gitlens` Git功能增强
+4. `lokalise.i18n-ally` 多语言增强
+5. `wayou.vscode-todo-highlight` 代码注释增强
 
 ## 工具
 
