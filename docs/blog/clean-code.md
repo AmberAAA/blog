@@ -1,6 +1,12 @@
 ---
 title: 代码整洁之道
 toc: 'menu'
+order: 1
+nav:
+  title: 博客
+group:
+  title: 代码
+  order: 1
 ---
 
 # 代码整洁之道

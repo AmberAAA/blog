@@ -1,3 +1,8 @@
+---
+toc: 'menu'
+group:
+  title: 代码
+---
 # 代码可测试
 
 ## 编写可测试的Javascript代码

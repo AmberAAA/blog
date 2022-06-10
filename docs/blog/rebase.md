@@ -1,3 +1,10 @@
+---
+toc: 'menu'
+group:
+  title: 工具
+  order: 2
+---
+
 # Git变基与Cherry-Pick
 
 # 变基 rebase
