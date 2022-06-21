@@ -122,3 +122,12 @@ text > log 2>&1 #将错误日志重定向到标注输出
 ```bash
 ps -ef | grep "/Users/anborong/code/" | awk '{print $2}'| xargs kill -9
 ```
+
+# 常用命令
+
+## nslookup
+更新DNS
+
+```bash
+nslookup -type=A www.baidu.com
+```
