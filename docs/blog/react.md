@@ -17,6 +17,13 @@ group:
 ## 函数式组件
 1. 涉及到一些state的初始化，应该在hook中进行初始化，useEffect第二个参数传入空数组，效果等同与componentDidMount
 
+## 常用hook
+
+1. useState
+2. useEffect
+3. useContext
+
+
 
 ## 自定义hooks
 
