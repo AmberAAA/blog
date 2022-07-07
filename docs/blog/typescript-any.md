@@ -1,7 +1,7 @@
 ---
 toc: 'menu'
 group:
-  title: React
+  title: TypeScript
   order: 2
 ---
 
