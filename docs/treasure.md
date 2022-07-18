@@ -44,3 +44,7 @@ toc: menu
 [Yapi](https://hellosean1025.github.io/yapi/)是去哪儿团队开发维护了一款API管理网站，支持私有化部署，以及权限管理，且能通过Swagger自动生成接口信息。
 
 [思否 segmentfault](https://segmentfault.com/)是一个类似于StackOverflow的程序员问答网站，里面有很多有意思的问题，可以多逛逛。
+
+## 面试八股文
+
+1. [程序员详细应聘技巧，倾心总结](https://juejin.cn/post/7081259940270047246)
