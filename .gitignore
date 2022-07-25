@@ -18,3 +18,5 @@
 .umi-production
 .env.local
 
+.package-lock.json
+pnpm-lock.yaml
