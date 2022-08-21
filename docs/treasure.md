@@ -1,7 +1,7 @@
 ---
 nav:
   title: 藏宝阁
-  order: 1
+  order: 5
 toc: menu
 ---
 

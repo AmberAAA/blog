@@ -4,6 +4,7 @@ toc: 'menu'
 order: 1
 nav:
   title: 博客
+  order: 1
 group:
   title: 代码
   order: 1
