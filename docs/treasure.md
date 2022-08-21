@@ -45,6 +45,9 @@ toc: menu
 
 [思否 segmentfault](https://segmentfault.com/)是一个类似于StackOverflow的程序员问答网站，里面有很多有意思的问题，可以多逛逛。
 
+[爱阅读](https://www.iyd.wang/) 一个电子书下载网站
+
+
 ## 面试八股文
 
 1. [程序员详细应聘技巧，倾心总结](https://juejin.cn/post/7081259940270047246)
