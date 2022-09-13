@@ -4,6 +4,7 @@ nav:
   order: 100
 toc: menu
 order: 100
+debug: true
 ---
 
 # WASM 简介
@@ -36,3 +37,4 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ##  参考资料
 > [MDN WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
 > [Wasm Pack 官方文档](https://rustwasm.github.io/docs/wasm-pack/)
+
