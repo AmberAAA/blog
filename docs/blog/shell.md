@@ -1,10 +1,9 @@
 ---
-title: Shell编程与常见命令
+title: Shell编程
 toc: 'menu'
 group:
-  title: 工具
+  title: Linux
 ---
-
 
 # 变量
 
@@ -122,25 +121,4 @@ text > log 2>&1 #将错误日志重定向到标注输出
 ```bash
 ps -ef | grep "/Users/anborong/code/" | awk '{print $2}'| xargs kill -9
 ```
-
-# 常用命令
-
-## nslookup
-更新DNS
-
-```bash
-nslookup -type=A www.baidu.com
-```
-
-## 查看文件/文件夹占用情况
-
-使用`du`命令可是快速查看当前文件/文件夹的占用情况。为`du`其实是`disk usage`的缩写。
-
-```zsh
-du -h #以人类可读的形式打印，单位为G、M、K
-du -ah --max-depth=1 # 现实所有 以及递归深度
-```
-
-
-
 
