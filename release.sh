@@ -2,4 +2,4 @@
 
 npm run build
 scp -r ./dist/ root@anborong.top:~/blog/
-open http://blog.anborong.top
+#open http://blog.anborong.top
