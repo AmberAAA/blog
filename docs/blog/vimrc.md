@@ -36,7 +36,11 @@ vimrc的注释格式是双引号"
 [^+W] R 切换窗口位置
 [^+W] [H/J/K/L] 改变窗口位置，移动到最左/下/上/右边。
 ```
-
+## 标签页操作
+```vim
+:tabnew     #开启新的标签页
+:gt/gT      #前往下一个/上一个标签页
+```
 ## 打开文件
 可以使用以下方式在Vim中打开文件。
 ```
@@ -59,4 +63,20 @@ https://github.com/easymotion/vim-easymotion
 
 ## 其他常用技巧
 取消搜索后的高亮: `:noh`
+
+## 搜索文件
+```zsh
+" find files and populate the quickfix list
+fun! FindFiles(filename)
+  let error_file = tempname()
+  silent exe '!find . -name "'.a:filename.'" | xargs file | sed "s/:/:1:/" > '.error_file
+  set errorformat=%f:%l:%m
+  exe "cfile ". error_file
+  copen
+  call delete(error_file)
+endfun
+command! -nargs=1 FindFile call FindFiles(<q-args>)
+```
+之后，使用命令`:FindFile`即可失效搜索文件
+
 
