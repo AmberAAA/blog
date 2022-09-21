@@ -1,21 +1,5 @@
-# dumi app
+# 个人博客
 
-## Getting Started
+## ICON FONT 地址
 
-Install dependencies,
-
-```bash
-$ npm i
-```
-
-Start the dev server,
-
-```bash
-$ npm start
-```
-
-Build site app,
-
-```bash
-$ npm run build
-```
+https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=3661169&keyword=&project_type=&page=
