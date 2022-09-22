@@ -5,7 +5,7 @@ export default defineConfig({
   mode: 'site',
   logo: '/images/logo.png',
   favicon: '/images/favicon.ico',
-  scripts: ['//at.alicdn.com/t/c/font_3661169_njp2wbn5luh.js'],
+  scripts: ['//at.alicdn.com/t/c/font_3661169_76bv3hc1sh7.js'],
   styles: [
     `.icon {
     width: 1em; height: 1em;

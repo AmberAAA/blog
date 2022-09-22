@@ -50,4 +50,11 @@ footer: Amber | anborong@outlook.com | Copyright © 2022<br /> Source  [Github](
       <dd>C++与密码学入门</dd>
     </a>
   </dl> 
+  <dl>
+    <a href="/vim">
+      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-vim"> </use></svg>
+      <dt>Vim</dt>
+      <dd>Vim常用命令</dd>
+    </a>
+  </dl> 
 </div>
