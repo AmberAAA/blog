@@ -2,6 +2,7 @@
 title: 数学之美
 toc: 'menu'
 order: 50
+debug: true
 nav:
   title: 读书笔记
   order: 10
