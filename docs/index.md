@@ -61,7 +61,7 @@ footer: Amber | anborong@outlook.com | Copyright © 2022<br /> Source  [Github](
     <a href="/book-notes">
       <svg class="icon" aria-hidden="true"><use xlink:href="#icon-book"> </use></svg>
       <dt>读书笔记</dt>
-      <dd>买书如山倒，读书如抽丝</dd>
+      <dd>源码/书籍</dd>
     </a>
   </dl>
 </div>
