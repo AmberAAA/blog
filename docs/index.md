@@ -43,25 +43,4 @@ footer: Amber | anborong@outlook.com | Copyright © 2022<br /> Source  [Github](
       <dd>收藏了一些好用的工具</dd>
     </a>
   </dl>
-  <dl>
-    <a href="/cpp">
-      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cpp"> </use></svg>
-      <dt>C++</dt>
-      <dd>C++与密码学入门</dd>
-    </a>
-  </dl> 
-  <dl>
-    <a href="/vim">
-      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-vim"> </use></svg>
-      <dt>Vim</dt>
-      <dd>Vim常用命令</dd>
-    </a>
-  </dl> 
-  <dl>
-    <a href="/book-notes">
-      <svg class="icon" aria-hidden="true"><use xlink:href="#icon-book"> </use></svg>
-      <dt>读书笔记</dt>
-      <dd>源码/书籍</dd>
-    </a>
-  </dl>
 </div>

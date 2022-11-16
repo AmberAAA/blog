@@ -1,31 +1,29 @@
 ---
 toc: 'menu'
-group:
+nav:
   title: React
-  order: 2
 ---
-
 
 # React Context
 
 [Context - React](https://zh-hans.reactjs.org/docs/context.html)
 
-将公共的变量抽离到顶部，注入到组件当中。涉及到的核心API有三个。
+将公共的变量抽离到顶部，注入到组件当中。涉及到的核心 API 有三个。
 
-## 创建Context
+## 创建 Context
 
-使用React.createContext创建Context组件
+使用 React.createContext 创建 Context 组件
 
 ```ts
 export interface Theme {
-  foreground: string,
-  background: string
+  foreground: string;
+  background: string;
 }
 
 export interface Themes {
-  light: Theme,
-  dark: Theme,
-  [key: string]: Theme
+  light: Theme;
+  dark: Theme;
+  [key: string]: Theme;
 }
 
 export const themes: Themes = {
@@ -39,12 +37,15 @@ export const themes: Themes = {
   },
 };
 
-const ThemeContext = createContext<ThemeContextInterface>({ theme: themes.dark, setTheme: () => {} })
+const ThemeContext = createContext<ThemeContextInterface>({
+  theme: themes.dark,
+  setTheme: () => {},
+});
 ```
 
-## 注入Context
+## 注入 Context
 
-通过ThemeContext.Provider注入Context，必添参数value指定Context的值。
+通过 ThemeContext.Provider 注入 Context，必添参数 value 指定 Context 的值。
 
 ```
 <ThemeContext.Provider value={ { theme, setTheme } }>
@@ -52,11 +53,11 @@ const ThemeContext = createContext<ThemeContextInterface>({ theme: themes.dark, 
 </ThemeContext.Provider>
 ```
 
-## 消费Context
+## 消费 Context
 
 ### 方案一
 
-使用ThemeContext.Consumer进行消费，传入一个接受value的函数。
+使用 ThemeContext.Consumer 进行消费，传入一个接受 value 的函数。
 
 ```
 <ThemeContext.Consumer>
@@ -71,7 +72,7 @@ const ThemeContext = createContext<ThemeContextInterface>({ theme: themes.dark, 
 
 ### 方案二
 
-使用hook
+使用 hook
 
 ```
 const Word:FC = () => {
@@ -85,9 +86,9 @@ const Word:FC = () => {
 }
 ```
 
-## 动态Context
+## 动态 Context
 
-有时需要更新Context的值，思路是将stat复制给value，并通过setStat更新，从而渲染新页面。
+有时需要更新 Context 的值，思路是将 stat 复制给 value，并通过 setStat 更新，从而渲染新页面。
 
 ```
 const ThemeProvider: FC = (props) => {

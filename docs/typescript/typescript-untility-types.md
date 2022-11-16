@@ -1,8 +1,7 @@
 ---
 toc: 'menu'
-group:
+nav:
   title: TypeScript
-  order: 2
 ---
 
 # Typescript 内置类型
@@ -117,7 +116,7 @@ type Record<K extends keyof any, T> = {
 
 1. 传入一个普通字符串
    ```ts
-   const TCats = Record<string, Cat>
+   const TCats = Record<string, Cat>;
    ```
 
 ## Pick
