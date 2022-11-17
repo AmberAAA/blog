@@ -29,11 +29,12 @@ toc: menu
 
 ## React 生态
 
-| 类型         | 名称                                        |
-| ------------ | ------------------------------------------- |
-| 状态管理工具 | [recoiljs](https://recoiljs.org/zh-hans/)   |
-| HTTP 请求    | [umi-request](https://ahooks.js.org/zh-CN/) |
-| hooks 扩展   | [ahooks](https://ahooks.js.org/)            |
+| 类型         | 名称                                                |
+| ------------ | --------------------------------------------------- |
+| 状态管理工具 | [recoiljs](https://recoiljs.org/zh-hans/)           |
+| HTTP 请求    | [umi-request](https://github.com/umijs/umi-request) |
+| hooks 扩展   | [ahooks](https://ahooks.js.org/)                    |
+| 文档生成     | [docusaurus](https://docusaurus.io/)                |
 
 ## 网站
 
