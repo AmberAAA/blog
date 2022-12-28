@@ -51,7 +51,9 @@ git diff [brach/commit] [branch/commit] #比较两次提交或者分支
 
 ## stash
 
-## 分支合并
+当你当前工作被打断，不得不跳转到其他分支时，你可以使用`git stash`暂存当前所有的改动，并返回一个干净的工作区，你就可以无虑的跳转到其他分支。需要返回工作时，只需要且回到工作分支，执行`git stash pop`弹出暂存内容即可。
+
+小技巧：当你发现你在错误的分支上修改了代码，此时因此冲突你已经无法使用`git checkout`跳转到正确的分支。那么你可以使用`git stash`暂存当前修改。然后跳转到正确的分支，使用`git stash pop`弹出代码，解决冲突即可。🎉🎉🎉🎉🎉
 
 ### Merge
 
@@ -73,18 +75,79 @@ git diff #快速定位到冲突位置。
 # git cherry-pick [commit]...
 git cherry-pick 7c948209366e4b8acb7730a8ce7ec8cba7025cae # 将这条commit记录cherry-pick到当前分支
 git cherry-pick e8cbc3a1925d7d07802a063095a2e6921993a890 7c948209366e4b8acb7730a8ce7ec8cba7025cae # 后面可以跟多个提交记录
+
+# cherry-pick 有可能产生冲突
+# 使用 --continue  --abort 解决冲突，或者放弃cherry-pick
 ```
 
 ### Rebase
+
+rebase 与 merge 概念基本相同，只不过少了一次`Merge xxx form xxx`记录。推荐使用 merge 而不是 rebase
+
+Cherry-Pick 与 Rebase 属于黑魔法，建议只用来解决特殊情况。
+
+## MR 合并请求
+
+合并请求应该是往主干分支添加代码的唯一手段，当出现冲突时，解决方法一般为：
+
+1. git checkout [主干分支]
+2. git pull
+3. git checkout [开发分支]
+4. git merge [主干分支]
+5. 处理冲突
+6. git merge --continue
+7. git push
 
 ## 后悔药
 
 ### log & reflog
 
-### revert
+```bash
+git log # 查看git commit 记录中
+git log --graph # 查看git commit 记录。有图像化的连线，阅读更友好
+git reflog # 查看版本记录，吃后悔药的前置技能；
+```
 
-### reset
+### 场景 A: 你提交了错误的一条 commit 或者多条 commit 记录，但是还没有 push 到远端
+
+1. 确保你有一个干净的工作区和暂存区
+2. `git tag [tag name]` 在当前提交记录打一个 tag，防止吃后悔药中毒。
+3. `git log` 查看 commit 记录，找到最近一次正确的 commit hash
+4. `git reset`
+   1. 使用`git reset --soft [commit hash]`强行跳转到所选 commit，将之后的代码放置在工作区
+   1. 使用`git reset --hard [commit hash]`强行跳到所选 commit，删除之后的 commit 记录，**同时删除对应的提交代码**
+5. `git tag -D [tag name]` 删除之前记录的 tag
+
+### 场景 B：你提交了错误的一条 commit 或者多个 commit 记录，并且已经 push 到了远端
+
+```bash
+# 执行场景A的命令，将本地的commit修复正确
+git push -f # 使用force 强行覆盖远端提交记录
+```
+
+### 场景 C：你不仅提交了错误的 commit，并且还 push 到了远端并且还将它合并到了主干分支
+
+```bash
+# 在 git lab 中 revert 合并记录 生成 revert commit A
+# 从 最新的主干分支拉出新的fix分支，最新的记录应该是commit A
+# revert commit A;
+# 此时你不能再使用reset命令，进行快速修改，只能手动将错误的commit修复，并提交新的记录
+```
+
+### 场景 D: 在场景 C 下，如果主干分支允许 push
+
+1. 切换到主干分支，reset 掉 merge 记录，强行覆盖远程分支
+2. 执行场景 B 的操作
+3. 重新提交 merge
+
+### 场景 E: 经过 git reset、git revert、等一系列操作代码丢了，，，而在操作前又没有打 TAG 备份。。。。
+
+1. 使用`git reflog` 查找 hash 值
+2. 使用`git checkout [hash]`的方式跳转到错误操作之前
 
 ## 工作流
 
-### Merge Request
+1. 正常情况：主干分支 ->> 迭代分支 ->> 个人开发分支 -> 迭代分支 -> 主干分支
+2. 修复线上 BUG； hot-fix -> 主干分支
+3. 主干分支、迭代分支应该被严格限制权限，只能提交 MR 合并请求；
+4. Code Review、Unit Test、以及其他门禁 应该在 MR 阶段内完成；
