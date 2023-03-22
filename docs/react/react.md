@@ -54,3 +54,7 @@ useEffect(() => {
   fetchData();
 }, [props.end, props.start]);
 ```
+
+## forwardRef
+
+使用[forwardRe]f(https://react.dev/reference/react/forwardRef)可以给ref中添加其他属性或方法，这在面向组件开发时，比较方便。
