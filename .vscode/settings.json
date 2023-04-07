@@ -1,5 +1,4 @@
 {
-  "cSpell.words": [
-    "dumi"
-  ]
+  "cSpell.words": ["dumi"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

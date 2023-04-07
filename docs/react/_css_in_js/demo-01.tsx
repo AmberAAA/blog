@@ -1,4 +1,7 @@
-import React from 'react';
+/**
+ * title: Hello World
+ * description: 使用styled将样式与组件分离
+ */
 import styled from 'styled-components';
 
 const Title = styled.div`
