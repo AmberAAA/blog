@@ -20,11 +20,12 @@ nav:
 
 ## 实例
 
-<Alert type="info">
-1.请打开控制台查看输出<br>
-2.请打开源码查看备注
-</Alert>
+:::info{title=自定义标题}
 
-<code
-  src="../../src/components/optimization/index.tsx"
-/>
+1.请打开控制台查看输出
+
+2.请打开源码查看备注
+
+:::
+
+<code src="../../src/components/optimization/index.tsx"> </code>

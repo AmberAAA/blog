@@ -1,9 +1,20 @@
-# 个人博客
+# AmberAAA
 
-## ICON FONT 地址
+A static site base on [dumi](https://d.umijs.org).
 
-https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=3661169&keyword=&project_type=&page=
+## Development
 
-## 主题色
+```bash
+# install dependencies
+$ yarn install
 
-`#ffb84f`
+# start dev server
+$ yarn start
+
+# build docs
+$ yarn run build
+```
+
+## LICENSE
+
+MIT

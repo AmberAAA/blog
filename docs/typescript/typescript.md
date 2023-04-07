@@ -48,7 +48,7 @@ type Point = [x: number, y: number];
 type Sum = (a: number, b: number) => number;
 
 interface Sum {
-  (a: number, b: number): number;
+	(a: number, b: number): number;
 }
 ```
 
@@ -66,20 +66,22 @@ type HealthyFoods = Fruit | Vegetable;
 
 ### 合并与继承
 
-<Alert>TS 的类型可以重载，但是 JS 对象是不支持方法重载的！</Alert>
+:::info
+TS 的类型可以重载，但是 JS 对象是不支持方法重载的!
+:::
 
 ```ts
 interface NumLogger {
-  log: (val: number) => void;
+	log: (val: number) => void;
 }
 
 type StringAndNumberLogger = NumLogger & {
-  log: (val: string) => void;
+	log: (val: string) => void;
 };
 
 const logger: StringAndNumberLogger = {
-  // 此时a已经被自动ts自动约束为：string ｜ number
-  log: (a) => console.log(a),
+	// 此时a已经被自动ts自动约束为：string ｜ number
+	log: (a) => console.log(a),
 };
 ```
 
@@ -88,10 +90,10 @@ const logger: StringAndNumberLogger = {
 ```ts
 // ts报错：属性“log”的类型不兼容。
 interface StringAndNumber extends NumLogger {
-  // 入参类型与父级必须完全一致
-  log: (e: string) => void;
-  // 但可以修改返回值
-  log: (e: string) => string;
+	// 入参类型与父级必须完全一致
+	log: (e: string) => void;
+	// 但可以修改返回值
+	log: (e: string) => string;
 }
 ```
 
@@ -101,37 +103,37 @@ interface StringAndNumber extends NumLogger {
 
 ```ts
 interface Person {
-  name: String;
+	name: String;
 }
 
 const tom: Person = {
-  name: 'Tom',
-  // 没有say方法 会报错，可见类型声明，会被提前
-  say: () => 'Hello every body',
+	name: 'Tom',
+	// 没有say方法 会报错，可见类型声明，会被提前
+	say: () => 'Hello every body',
 };
 
 interface Person {
-  say: () => string;
+	say: () => string;
 }
 
 //
 const amber: Person = {
-  name: 'Amber',
-  // 类型被合并，Person同时拥有 name say
-  say() {
-    return "I'm " + this.name;
-  },
+	name: 'Amber',
+	// 类型被合并，Person同时拥有 name say
+	say() {
+		return "I'm " + this.name;
+	},
 };
 ```
 
 ```ts
 type Person = {
-  name: string;
+	name: string;
 };
 
 // 报错 Person重复
 type Person = {
-  age: () => string;
+	age: () => string;
 };
 ```
 
@@ -142,18 +144,18 @@ type Person = {
 ```ts
 // 1. 如果描述这个对象
 const hdcpVersion: HdcpV = {
-  'HDMI1.3': {
-    list: ['HDMI1.4'],
-    def: 'HDMI1.4',
-  },
-  'HDMI1.5': {
-    list: ['HDMI1.5'],
-    def: 'HDMI1.5',
-  },
-  DVI: {
-    list: ['HDCP1.3'],
-    def: 'HDCP1.2',
-  },
+	'HDMI1.3': {
+		list: ['HDMI1.4'],
+		def: 'HDMI1.4',
+	},
+	'HDMI1.5': {
+		list: ['HDMI1.5'],
+		def: 'HDMI1.5',
+	},
+	DVI: {
+		list: ['HDCP1.3'],
+		def: 'HDCP1.2',
+	},
 };
 
 // 2. 声明一个type 包含所有的视频接口协议
@@ -161,12 +163,12 @@ type HDCP = 'HDMI1.3' | 'HDMI1.5' | 'HDMI1.4' | 'DVI' | 'HDCP1.3' | 'HDCP1.2';
 
 // 3. 声明一个type 用来描述对象
 type HdcpV = {
-  // 4. [key in HDCP]对对象的key进行约束，只能从HDCP里取
-  // 5. **注意**： "?"问好表述为可选，去掉问好表述，对象的值必须吧 HDCP全部包含
-  [key in HDCP]?: {
-    list: HDCP[];
-    def: HDCP;
-  };
+	// 4. [key in HDCP]对对象的key进行约束，只能从HDCP里取
+	// 5. **注意**： "?"问好表述为可选，去掉问好表述，对象的值必须吧 HDCP全部包含
+	[key in HDCP]?: {
+		list: HDCP[];
+		def: HDCP;
+	};
 };
 ```
 
@@ -177,7 +179,7 @@ type HdcpV = {
 ```ts
 type Props = { name: string };
 interface Props {
-  name: string;
+	name: string;
 }
 ```
 

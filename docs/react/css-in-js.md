@@ -15,9 +15,9 @@ nav:
 
 -- TODO: --
 
-<Alert type="info">
+:::info
 我们需要通过实践去验证，它可以战胜 LESS+CSS 变量
-</Alert>
+:::
 
 ## 文档
 
