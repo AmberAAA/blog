@@ -9,6 +9,21 @@ toc: menu
 
 这里收藏了一些好玩或者好用的工具 🔧
 
+## 前端生态
+
+| 类型       | 名称                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------- |
+| Docusaurus | [docusaurus](https://docusaurus.io/) 文档生成工具                                                  |
+| palywright | [palywright](https://playwright.dev/) E2E 测试                                                     |
+| Astro      | [Astro](https://github.com/storyblok/storyblok-astro) ALL IN ONE 静态网站生成，SEO 友好， CMS 友好 |
+| strapi     | [StrAPI](https://strapi.io/) 无头 CMS                                                              |
+
+## CSS
+
+| 类型   | 名称                                     |
+| ------ | ---------------------------------------- |
+| UnoCSS | [UnoCSS](https://unocss.dev/) 原子化 CSS |
+
 ## Vscode 插件
 
 1. `streetsidesoftware.code-spell-checker` 代码拼写错误检查
@@ -18,6 +33,8 @@ toc: menu
 5. `wayou.vscode-todo-highlight` 代码注释增强
 
 ## 工具
+
+[Best of JS](https://bestofjs.org/) 查找当前最流行的项目，并查看趋势
 
 [ApiFox](https://www.apifox.cn/) API 文档、调试、Mock、自动化测试工具集
 
@@ -29,13 +46,15 @@ toc: menu
 
 ## React 生态
 
-| 类型               | 名称                                                                        |
-| ------------------ | --------------------------------------------------------------------------- |
-| 状态管理工具       | [recoiljs](https://recoiljs.org/zh-hans/)                                   |
-| HTTP 请求          | [umi-request](https://github.com/umijs/umi-request)                         |
-| hooks 扩展         | [ahooks](https://ahooks.js.org/)                                            |
-| 文档生成           | [docusaurus](https://docusaurus.io/)                                        |
-| 布局，栅格，可拖动 | [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout) |
+| 类型                  | 名称                                                                        |
+| --------------------- | --------------------------------------------------------------------------- |
+| 状态管理工具          | [zustand](https://github.com/pmndrs/zustand)                                |
+| HTTP 请求             | [umi-request](https://github.com/umijs/umi-request)                         |
+| hooks 扩展            | [ahooks](https://ahooks.js.org/)                                            |
+| 文档生成              | [docusaurus](https://docusaurus.io/)                                        |
+| 布局，栅格，可拖动    | [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout) |
+| 状态管理工具 **废弃** | [recoiljs](https://recoiljs.org/zh-hans/) **废弃**                          |
+| CSS in JS             | [style-components ](https://styled-components.com/)                         |
 
 ## 网站
 
@@ -54,10 +73,3 @@ toc: menu
 ## 面试八股文
 
 1. [程序员详细应聘技巧，倾心总结](https://juejin.cn/post/7081259940270047246)
-
-## 读书清单
-
-| 书名         | 作者          |
-| ------------ | ------------- |
-| 数学之美     | 吴军          |
-| 从一到无穷大 | Georage Gamow |
