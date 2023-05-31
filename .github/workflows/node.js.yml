@@ -37,4 +37,4 @@ jobs:
           env | grep PRIVATE_KEY
           chmod 600  ~/.ssh/id_rsa
           ssh-keyscan anborong.top >> ~/.ssh/known_hosts
-          scp -r ./ root@anborong.top:~/blog/
+          scp -r ./build/* root@anborong.top:~/blog/
