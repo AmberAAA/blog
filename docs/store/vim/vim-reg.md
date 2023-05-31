@@ -1,10 +1,8 @@
 ---
 title: Vim 搜索与匹配
-toc: 'menu'
-order: 50
-group:
-  title: Vim
-  order: 50
+nav:
+	title: 归档文档
+	order: 9999
 ---
 
 # Vim 搜索与匹配

@@ -1,10 +1,8 @@
 ---
 title: Vim使用指南
-toc: 'menu'
-order: 50
-group:
-  title: Vim
-  order: 50
+nav:
+	title: 归档文档
+	order: 0
 ---
 
 # Vim 使用指南
