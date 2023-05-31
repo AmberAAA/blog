@@ -13,29 +13,28 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 16.x
-    - run: npm i
-    - run: npm run build
-    - name: 'push code'
-      env:
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
-        env | grep PRIVATE_KEY
-        chmod 600  ~/.ssh/id_rsa
-        ssh-keyscan anborong.top >> ~/.ssh/known_hosts
-        scp -r ./dist/ root@anborong.top:~/blog/
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - run: npm i
+      - run: npm run build
+      - name: "push code"
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+          env | grep PRIVATE_KEY
+          chmod 600  ~/.ssh/id_rsa
+          ssh-keyscan anborong.top >> ~/.ssh/known_hosts
+          scp -r .// root@anborong.top:~/blog/

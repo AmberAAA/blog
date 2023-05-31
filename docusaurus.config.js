@@ -41,8 +41,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          // editUrl:
-          // 'https://github.com/amberaaa/docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/AmberAAA/blog/edit/master',
         },
         blog: {
           showReadingTime: true,
