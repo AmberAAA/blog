@@ -1,9 +1,12 @@
 # 权限控制
 
-> 参考资料:
->
-> 1. [arch-wiki: 文件权限](https://wiki.archlinuxcn.org/wiki/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E5%B1%9E%E6%80%A7)
-> 2. [arch-wiki: 用户管理](https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84)
+:::info
+参考资料:
+
+1.  [arch-wiki: 文件权限](https://wiki.archlinuxcn.org/wiki/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E5%B1%9E%E6%80%A7)
+2.  [arch-wiki: 用户管理](https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84)
+
+:::
 
 ## 文件权限
 
@@ -88,7 +91,9 @@ usermod -aG group-name username # 不加 -a 则是覆盖模式
 gpasswd -a username group-name
 ```
 
-> docker 免 sudo 执行，只需要将当前用户添加到 docker 用户组`gpasswd -a ${USER} docker`，之后重新登录 shell 即可，如果不生效，则重启 docker 服务；
+:::info
+docker 免 sudo 执行，只需要将当前用户添加到 docker 用户组`gpasswd -a ${USER} docker`，之后重新登录 shell 即可，如果不生效，则重启 docker 服务；
+:::
 
 ### 将用户移除某个用户组
 

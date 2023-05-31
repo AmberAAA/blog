@@ -24,3 +24,23 @@ du -ah --max-depth=1 # 现实所有 以及递归深度
 ```zsh
 du -ah --max-depth=1 | sort -hr
 ```
+
+## 代理的最佳实践
+
+1. 如果网络内已经存在代理服务器，则通过设置环境变量`HTTP_PROXY`, `HTTPS_PROXY`, 或者`proxychains`实现。
+2. 如果网络内没有代理服务器，则通过 docker，网络类型为 host，搭建代理服务器；
+
+## 端口占用
+
+```sh
+netstat -tunlp #该命令已停止维护，但可用；
+ss -atu #查看所有tcp,udp进程信息
+```
+
+如果没有显示进程相关信息，则需要提升用户权限
+
+## 进程查看
+
+```
+ps -aux
+```
