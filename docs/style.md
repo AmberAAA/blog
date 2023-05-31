@@ -1,14 +1,10 @@
----
-toc: 'menu'
-group:
-  title: 代码
----
-
 # 关于 CSS 开坑记录
 
 ## 在 LESS 中使用 CSS 变量
 
 可以。可以在 LESS 中使用 CSS 变量
+
+<!--truncate-->
 
 ## flex-shrink 不生效
 

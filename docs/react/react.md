@@ -1,10 +1,10 @@
 ---
-toc: 'menu'
+toc: "menu"
 nav:
   title: React
 ---
 
-# React 使用心得
+# React
 
 ## Class 组件与函数组件
 
@@ -32,8 +32,8 @@ export const useCount = (num: number = 0) => {
       console.log(state);
       setState((e) => e + 1);
     };
-    document.addEventListener('click', add);
-    return () => document.removeEventListener('click', add);
+    document.addEventListener("click", add);
+    return () => document.removeEventListener("click", add);
   }, []);
   return state;
 };
