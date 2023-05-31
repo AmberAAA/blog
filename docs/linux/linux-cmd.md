@@ -1,14 +1,8 @@
----
-title: Linux 常用命令
-toc: 'menu'
-group:
-  title: Linux
----
-
 # 常用命令
 
 ## nslookup
-更新DNS
+
+更新 DNS
 
 ```bash
 nslookup -type=A www.baidu.com
@@ -26,8 +20,7 @@ du -ah --max-depth=1 # 现实所有 以及递归深度
 ## 排序
 
 使用`sort`可是快速对输入进行排序，比如配合`du`命令，就可以实现查询当前文件夹内的文件占用情况，并本剧文件大小排序展示。
+
 ```zsh
 du -ah --max-depth=1 | sort -hr
 ```
-
-

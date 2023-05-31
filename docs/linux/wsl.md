@@ -1,13 +1,9 @@
 ---
-title: 代码整洁之道
-toc: 'menu'
-order: 1
+toc: menu
+title: WSL
 nav:
-  title: 博客
-  order: 1
-group:
-  title: Windows
-  order: 100
+  title: Linux
+  order: 0
 ---
 
 # WSL

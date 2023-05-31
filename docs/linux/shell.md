@@ -1,11 +1,6 @@
----
-title: Shell编程
-toc: 'menu'
-group:
-  title: Linux
----
+# Shell 编程
 
-# 变量
+## 变量
 
 1. 定一个变量不需要$符号
 2. 取变量的值需要在变量前加$符号
@@ -27,15 +22,15 @@ do
 done
 ```
 
-# 环境变量
+## 环境变量
 
-1. 在macOS，使用export修改或新增环境变量，使用unset删除环境变量
-2. 若脚本修改了环境变量并希望起生效，则使用source命令，**source updateEnv.sh**
+1. 在 macOS，使用 export 修改或新增环境变量，使用 unset 删除环境变量
+2. 若脚本修改了环境变量并希望起生效，则使用 source 命令，**source updateEnv.sh**
 
-# 函数
+## 函数
 
-1. shell脚本中可以使用函数，但函数必须在执行前声明且定义；
-2. shell中调用函数不需要加括号
+1. shell 脚本中可以使用函数，但函数必须在执行前声明且定义；
+2. shell 中调用函数不需要加括号
 3. 函数通过$1,$2….接收参数
 
 ```bash
@@ -53,9 +48,9 @@ done
 sayHi Amber
 ```
 
-# for循环
+## for 循环
 
-for循环的结构体一般如下
+for 循环的结构体一般如下
 
 ```bash
 #!/bin/zsh
@@ -67,7 +62,7 @@ done
 
 ```
 
-# 流程控制
+## 流程控制
 
 1. 流程控制需要关系运算符
 2. 流程内[[与[代表含义不同，优先使用[[
@@ -88,17 +83,17 @@ else
 fi
 ```
 
-# 标准输入输出
+## 标准输入输出
 
 ```bash
- 
+
 while read line
 do
 	echo $line
 done
 ```
 
-# 重定向
+## 重定向
 
 [Shell 输入/输出重定向](https://www.runoob.com/linux/linux-shell-io-redirections.html)
 
@@ -110,15 +105,14 @@ text < fill 1> log 2> error  # 0输入1输出2输出
 text > log 2>&1 #将错误日志重定向到标注输出
 ```
 
-# 管道、awk、xargs
+## 管道、awk、xargs
 
 1. 获取所有进程信息
 2. 过滤关键词
-3. 打印第2列
+3. 打印第 2 列
 4. 管道将上一个的标准输入转换为下一个的标准输出
-5. xargs则是将标准输入转换为参数
+5. xargs 则是将标准输入转换为参数
 
 ```bash
 ps -ef | grep "/Users/anborong/code/" | awk '{print $2}'| xargs kill -9
 ```
-
