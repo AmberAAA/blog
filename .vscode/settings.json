@@ -1,4 +1,7 @@
 {
-  "cSpell.words": ["dumi"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "cSpell.words": [
+    "dumi"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": false
 }

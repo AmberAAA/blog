@@ -42,6 +42,8 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/AmberAAA/blog/edit/master',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
         blog: {
           showReadingTime: true,
@@ -55,6 +57,7 @@ const config = {
         },
       }),
     ],
+    
   ],
 
   themeConfig:
@@ -87,12 +90,8 @@ const config = {
             position: 'left',
             label: 'TypeScript',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'treasure',
-            position: 'left',
-            label: 'Treasure',
-          },
+          { to: '/docs/css', label: 'CSS', position: 'left' },
+          { to: '/docs/treasure', label: 'Treasure', position: 'left' },
           { to: '/blog', label: 'Blogs', position: 'left' },
           {
             href: 'https://github.com/amberaaa/blog',

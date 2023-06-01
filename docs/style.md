@@ -1,6 +1,9 @@
 ---
 title: CSS
-tags: [CSS]
+id: css
+last_update:
+  author: Amber
+  date: 2023-06-01
 ---
 
 # CSS
