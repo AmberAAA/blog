@@ -1,10 +1,4 @@
----
-toc: 'menu'
-nav:
-  title: TypeScript
----
-
-# TS any、unknown、void、never 之间的区别
+# any、unknown、void、never
 
 > [参考资料](https://blog.csdn.net/KNIGH_YUN/article/details/115412962)
 
@@ -26,11 +20,11 @@ nav:
 
 ```ts
 let a: unknown;
-let b: any = 'A';
+let b: any = "A";
 let c: Date = new Date();
 
 // unknown 可以被赋任何值
-a = '1';
+a = "1";
 a = 1;
 a = b;
 a = new Date();

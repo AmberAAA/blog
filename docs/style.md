@@ -1,4 +1,9 @@
-# 关于 CSS 开坑记录
+---
+title: CSS
+tags: [CSS]
+---
+
+# CSS
 
 ## 在 LESS 中使用 CSS 变量
 

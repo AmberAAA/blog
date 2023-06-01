@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Amber 代码屋',
+  title: 'Amber',
   // tagline: '',
   favicon: 'img/favicon.ico',
 
@@ -63,7 +63,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Amber 代码屋',
+        title: 'Amber',
         logo: {
           alt: '',
           src: 'img/logo.png',
@@ -71,11 +71,29 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'linux',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Linux',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'docSidebar',
+            sidebarId: 'react',
+            position: 'left',
+            label: 'React',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'typescript',
+            position: 'left',
+            label: 'TypeScript',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'treasure',
+            position: 'left',
+            label: 'Treasure',
+          },
+          { to: '/blog', label: 'Blogs', position: 'left' },
           {
             href: 'https://github.com/amberaaa/blog',
             label: 'GitHub',
