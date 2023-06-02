@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "clsx",
     "dumi"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
