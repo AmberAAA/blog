@@ -16,6 +16,7 @@ const Poetry  = styled.div`
   user-select: none;
   justify-content: center;
   padding-top: 36px;
+  color: #333;
   p {
     line-height: 1.5em;
   }
