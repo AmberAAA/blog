@@ -1,6 +1,8 @@
 ---
-title: Linux
-tags: [Linux]
+title: 索引
+last_update:
+  author: Amber
+  date: 2023-06-03
 ---
 
 ### 用户、用户组

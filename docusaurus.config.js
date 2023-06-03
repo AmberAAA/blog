@@ -48,6 +48,9 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: "所有文章",
+          blogSidebarCount: 'ALL',
+          blogDescription: "星光不问赶路人"
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
