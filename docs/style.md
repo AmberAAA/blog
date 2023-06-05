@@ -37,3 +37,7 @@ last_update:
 
 1. gird-template-\*
 2. grid-auto-\*
+
+## clip-path
+
+[clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)可以帮助我们实现更复杂的倒角，或者更加复杂的裁切。甚至可以根据SVG的路径进行裁切，路径中的坐标点可以包含`calc()`，但是这些点不能在元素外面，否则整体失效。
