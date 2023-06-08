@@ -1,4 +1,4 @@
-import { AnimationAction, AnimationMixer, Clock, Group, LoopRepeat, Object3D } from "three";
+import { AnimationAction, AnimationMixer, Clock, Group, Object3D} from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 
@@ -26,6 +26,7 @@ export class Robot3D {
         this.mixer = new AnimationMixer(this.scene);
         this.action = this.mixer.clipAction(gltf.animations[0]);
         this.action.play();
+        this.initEvent();
         res();
       })
     })
@@ -51,5 +52,20 @@ export class Robot3D {
     if (this.mixer) {
       this.mixer.update(this.clock.getDelta());
     }
+  }
+
+  public initEvent () {
+    window.document.addEventListener("mousemove", e => {
+      const factor = Math.PI / 180 * 30
+      const x = e.clientX / window.innerWidth * factor  - factor;
+      const y = e.clientY / window.innerHeight * factor - factor;
+      this.lookAt(y, x);
+    });
+  }
+  
+
+  public lookAt (x, y) {
+    if (!this.isInit) return;
+    this.scene.rotation.set(x, y, 0)
   }
 }
