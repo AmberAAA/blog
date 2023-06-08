@@ -1,81 +1,95 @@
-import React, { FC, useEffect, useRef } from "react";
-import { WebGLRenderer, PerspectiveCamera, Scene, Color, AmbientLight, PointLight, RectAreaLight, Vector3, DirectionalLight, DirectionalLightHelper, CameraHelper } from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import React, { FC, useEffect, useRef, useState } from "react";
+import {
+  WebGLRenderer,
+  PerspectiveCamera,
+  Scene,
+  AmbientLight,
+  Vector3,
+  SRGBColorSpace,
+  ACESFilmicToneMapping,
+} from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import Stats from 'three/examples/jsm/libs/stats.module.js'
 
 import styled from "styled-components";
+import { Robot3D } from "../3d/robot";
 
+const SIZE = 400;
 const Cont = styled.div`
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 400px;
-  height: 400px;
+  width: ${SIZE}px;
+  height: ${SIZE}px;
   z-index: 10;
   cursor: pointer;
 `;
+let stats = new Stats();
+
 
 export const Robot: FC = () => {
-
   const ref = useRef<HTMLDivElement>(null);
+  const [robot] = useState(new Robot3D(1));
+
+  const initState = () => {
+    stats.showPanel(0);
+    stats.dom.style.position = 'fixed';
+    stats.dom.style.left = "0px";
+    stats.dom.style.top = '0px';
+    document.body.appendChild(stats.dom);
+  }
 
   const start = () => {
     const camera = new PerspectiveCamera(50, 1, 0.1, 100);
-    camera.position.set(0, 0 , 8);
-    camera.lookAt(new Vector3(0,0,0));
+    camera.position.set(0, 0, 4);
+    camera.lookAt(new Vector3(0, 0, 0));
 
     const scene = new Scene();
 
     const loader = new GLTFLoader();
-    loader.setPath("/robot/");
-    loader.load("scene.gltf", (e) => {
-      const modal = e.scene;
-      const z = 0.05;
-      modal.scale.set(z, z, z);
-      modal.position.set(0,0,0);
-      scene.add(modal);
+    loader.setPath("/");
+
+    robot.init().then(() => {
+      scene.add(robot.scene);
       renderer.render(scene, camera);
     })
-      
-    const light = new AmbientLight(0xffffff, 1);
+
+
+    const light = new AmbientLight(0xededed, 0.8);
     scene.add(light);
 
-
-    const rectLight = new DirectionalLight( 0xbbbbbb, 1);
-    rectLight.position.set( 15, 15, 15 );
-    rectLight.lookAt( 0, 0, 0 );
-    scene.add( rectLight );
-
     const renderer = new WebGLRenderer({
-      antialias: true,
+      antialias: false,
       alpha: true,
     });
-    renderer.setSize(400, 400);
+    renderer.setSize(SIZE, SIZE);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputColorSpace = SRGBColorSpace;
+    renderer.toneMapping = ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 4;
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
     const r = () => {
       controls.update();
+      robot.animate();
       renderer.render(scene, camera);
       window.requestAnimationFrame(r);
-    }
+    };
 
-    r();
-
-
+    // initState();
+    // renderer.setAnimationLoop(r);
+    window.requestAnimationFrame(r);
     ref.current.appendChild(renderer.domElement);
-  }
-
+  };
 
   useEffect(() => {
-
     if (ref.current) {
-      start()
+      start();
     }
-  }, [ref])
-  
-  
-  return <Cont className="container" ref={ref}></Cont>
-}
+  }, [ref]);
+
+  return <Cont className="container" ref={ref}></Cont>;
+};
