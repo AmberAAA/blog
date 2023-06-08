@@ -10,7 +10,6 @@ import {
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import Stats from 'three/examples/jsm/libs/stats.module.js'
 
 import styled from "styled-components";
 import { Robot3D } from "../3d/robot";
@@ -25,20 +24,10 @@ const Cont = styled.div`
   z-index: 10;
   cursor: pointer;
 `;
-let stats = new Stats();
-
 
 export const Robot: FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [robot] = useState(new Robot3D(1));
-
-  const initState = () => {
-    stats.showPanel(0);
-    stats.dom.style.position = 'fixed';
-    stats.dom.style.left = "0px";
-    stats.dom.style.top = '0px';
-    document.body.appendChild(stats.dom);
-  }
 
   const start = () => {
     const camera = new PerspectiveCamera(50, 1, 0.1, 100);
@@ -79,8 +68,6 @@ export const Robot: FC = () => {
       window.requestAnimationFrame(r);
     };
 
-    // initState();
-    // renderer.setAnimationLoop(r);
     window.requestAnimationFrame(r);
     ref.current.appendChild(renderer.domElement);
   };
