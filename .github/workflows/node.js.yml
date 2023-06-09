@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: install oss utils
+        run: curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
@@ -30,11 +32,8 @@ jobs:
       - run: npm run build
       - name: "push code"
         env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          OSS_ID: ${{ secrets.OSS_ID }}
+          OSS_KEY: ${{ secrets.OSS_KEY}}
         run: |
-          mkdir -p ~/.ssh/
-          echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
-          env | grep PRIVATE_KEY
-          chmod 600  ~/.ssh/id_rsa
-          ssh-keyscan anborong.top >> ~/.ssh/known_hosts
-          scp -r ./build/* root@anborong.top:~/blog/
+          ossutil cp -e oss-cn-zhangjiakou.alciyuncs.com -i $OSS_ID -k $OSS_KEY -rf  ./build/* oss://abr-blog/
+          
