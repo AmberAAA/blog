@@ -35,5 +35,5 @@ jobs:
           OSS_ID: ${{ secrets.OSS_ID }}
           OSS_KEY: ${{ secrets.OSS_KEY}}
         run: |
-          ossutil cp -e oss-cn-zhangjiakou.alciyuncs.com -i $OSS_ID -k $OSS_KEY -rf  ./build/* oss://abr-blog/
+          ossutil cp -e oss-cn-zhangjiakou.alciyuncs.com -i $OSS_ID -k $OSS_KEY -r -f  ./build/ oss://abr-blog/
           
