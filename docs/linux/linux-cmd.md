@@ -54,3 +54,15 @@ ss -atu #查看所有tcp,udp进程信息
 ```
 ps -aux
 ```
+
+### Date
+使用`date`格式化日期
+```sh
+# 格式化的模板字符串以+开头
+date "+%Y-%m-%d %T" # 2023-07-24 10:28:07
+
+# 备份文件
+
+cp "$HOME/.zsh" "$HOME/.back/$(date '+%Y-%m-%d %T').back"
+```
+
