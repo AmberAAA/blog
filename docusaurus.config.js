@@ -84,6 +84,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'nvim',
+            position: 'left',
+            label: 'Neovim',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'react',
             position: 'left',
             label: 'React',
