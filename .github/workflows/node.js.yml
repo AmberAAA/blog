@@ -24,11 +24,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: install oss utils
         run: curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
-      - name: Use Node.js 16.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: 'yarn'
+          node-version: 18
+          cache: "yarn"
           cache-dependency-path: yarn.lock
       - run: yarn install --frozen-lockfile
       - run: npm run build
@@ -39,4 +39,3 @@ jobs:
         run: |
           ossutil rm -e oss-cn-zhangjiakou.aliyuncs.com -i $OSS_ID -k $OSS_KEY -r -f oss://abr-blog/
           ossutil cp -e oss-cn-zhangjiakou.aliyuncs.com -i $OSS_ID -k $OSS_KEY -r -f  ./build/ oss://abr-blog/
-          
