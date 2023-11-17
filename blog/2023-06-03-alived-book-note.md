@@ -1,7 +1,7 @@
 ---
 title: 《活着》
 tags: [图书笔记]
-authors: amber
+authors: Amber
 ---
 
 富贵有个好媳妇。

@@ -1,7 +1,7 @@
 ---
 title: Yapi 使用维护指南
 tags: [Yapi, 自动化, mock]
-authors: amber
+authors: Amber
 ---
 
 # Yapi 使用维护指南
