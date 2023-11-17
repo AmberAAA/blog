@@ -1,7 +1,7 @@
 ---
 title: 在MacOS中使用定时任务
 tags: [MAC]
-authors: amber
+authors: Amber
 ---
 
 在macos中使用定时任务需要注意一下事项：
