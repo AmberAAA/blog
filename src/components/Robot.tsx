@@ -15,6 +15,8 @@ import styled from "styled-components";
 import { Robot3D } from "../3d/robot";
 
 const SIZE = 400;
+const MOBILE_SIZE = SIZE/ 5;
+
 const Cont = styled.div`
   position: fixed;
   bottom: 0;
@@ -23,6 +25,11 @@ const Cont = styled.div`
   height: ${SIZE}px;
   z-index: 10;
   cursor: pointer;
+  /* user-select: none; */
+  @media screen and (max-width: 650px) {
+    height: ${MOBILE_SIZE}px;
+    width: ${MOBILE_SIZE}px
+  }
 `;
 
 export const Robot: FC = () => {
@@ -52,7 +59,11 @@ export const Robot: FC = () => {
       antialias: false,
       alpha: true,
     });
-    renderer.setSize(SIZE, SIZE);
+    if (window.screen.availWidth <= 650) {
+      renderer.setSize(MOBILE_SIZE, MOBILE_SIZE);
+    } else {
+      renderer.setSize(SIZE, SIZE);
+    }
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputColorSpace = SRGBColorSpace;
