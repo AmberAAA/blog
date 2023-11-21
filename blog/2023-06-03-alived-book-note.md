@@ -1,6 +1,6 @@
 ---
 title: 《活着》
-tags: [图书笔记]
+tags: [读书笔记]
 authors: Amber
 ---
 
