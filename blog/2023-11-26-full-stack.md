@@ -1,0 +1,22 @@
+---
+title: 目前最具性价比的全栈路线是啥？
+tags: [全栈]
+authors: Amber
+---
+
+# 目前最具性价比的全栈路线是啥？
+
+来之[知乎](https://www.zhihu.com/question/594662421/answer/3259377731)的一个回答
+
+作者：昌维
+链接：https://www.zhihu.com/question/594662421/answer/3259377731
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+app端：react native with expo + typescriptweb端：react.js + typescriptapi端：trpc 导出类型给app和web用，或者nest.js + 手动编写类型声明然后复制到app和web端用(也可以单独抽出一个名为datasource的monorepo，这样三个项目都可以共用这一个类型声明，这也是很多大厂以及我目前在用的方式)以上三个项目全部放在同一个git repo下做monorepo(用pnpm的workspace即可)这是目前性价比最高并且社区支持最完善的方案，之所以说性价比高是因为只需要学习react和nest.js这两个框架即可。稳定性好指的是typescript可以保证类型安全确保多个项目之间对接API不会有问题。社区支持完善就不用说了，react.js和nest.js都是node.js技术栈中在前后端领域各自都最火的框架，这也是很多大厂在用的相关框架（不信你可以去npm官网查一下这几个库的star，更新频率以及每周下载量等数据，还有react.js和nest.js的生态环境，google在medium和stackoverflow等网站查一下这些框架的名称调研一下使用情况，然后再去招聘网站评估一下给这些技术栈找接盘侠的难度，和其他那几个回答提到的什么flutter，uniapp，weex，fastapi，rails之类的和他们相比根本就不是一个等级，flutter目前除了闲鱼好像基本没有大厂在用，rn的话有airbnb，ctrip携程，wix以及expo官方在支持，minor version也在持续升级追随react的升级脚步，最近几个版本把js引擎也升级到了facebook的hermes，性能又更上一个台阶（react native性能问题已经是老黄历了，2023年末我拿个8年前的高通800系的手机都能跑最新版rn开发的app）你选个flutter就不说学习dart的成本了，招人也困难，单独招flutter很难找，但是招个写react前端的人转rn是很快的，uniapp这种国产框架不予置评，自己百度一下看看就知道多少坑，其他什么乱七八糟的框架的社区支持都不如rn和nest，最直观的就是看招聘jd，教程文章数量，stackoverflow的提问解答率就知道了）我目前已经有多个生产环境项目在用这套架构，配合 github actions做CI，sentry做监控，react native编译直接用expo的eas云端编译服务甚至可以做到本地不需要搭建安卓和ios开发环境，只需要装一个expo app即可真机开发并且自带热更新这套方案我已经使用有三年之久没有出现任何严重问题，无论是公司项目还是学校项目还是自己外包接单的项目用这套方案都非常顺手，找人接手和培训也很方便，基本上只要会写js和ts即可，这两个语言的上手难度和环境搭建难度也不是很高，node环境可以直接用nvm安装，多版本切换很方便，某个版本搞坏了也可以用nvm卸载后再重装，不污染系统也无需设置环境变量。至于npm registry，即使在国内，也有淘宝cnpm提供完整的第三方依赖包镜像支持。
+
+从未尝试过monorepo的单独抽离出类型文件，可以尝试。这是一个好点子。
+
+
+
+  
