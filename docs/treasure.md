@@ -14,6 +14,7 @@ displayed_sidebar: null
 | palywright | [palywright](https://playwright.dev/) E2E 测试                                                     |
 | Astro      | [Astro](https://github.com/storyblok/storyblok-astro) ALL IN ONE 静态网站生成，SEO 友好， CMS 友好 |
 | strapi     | [StrAPI](https://strapi.io/) 无头 CMS                                                              |
+| fullcalendar     | [fullcalendar](https://fullcalendar.io/demos) 日历 可拖拽 全平台                                                              |
 
 ## Vscode 插件
 
